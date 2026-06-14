@@ -1,0 +1,26 @@
+data:
+  source_dir: "./data/raw"
+  processed_dir: "./data/processed"
+
+chunking:
+  strategy: "recursive"
+  chunk_size: 500
+  chunk_overlap: 50
+
+vectorstore:
+  provider: "chroma"
+  persist_dir: "./data/chroma_db"
+  embedding_model: "text-embedding-3-small"
+
+retrieval:
+  top_k: 5
+  score_threshold: 0.7
+
+llm:
+  model: "gpt-4o-mini"
+  temperature: 0.0
+  max_tokens: 1000
+
+logging:
+  level: "INFO"
+  log_file: "./logs/pipeline.log"
