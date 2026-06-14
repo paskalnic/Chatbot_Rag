@@ -21,7 +21,17 @@ pyyaml = "^6.0.3"
 [tool.poetry.group.dev.dependencies]
 pytest = "*"
 ruff = "*"
+[tool.ruff] 
+line-length = 88
+target-version = "py312"
 
+[tool.ruff.lint]
+select = [
+    "E",   # erreurs de style
+    "F",   # variables non utilisées, imports inutiles
+    "I",   # ordre des imports
+    "W",   # warnings
+]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
