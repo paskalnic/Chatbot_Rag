@@ -10,14 +10,14 @@ chunking:
 vectorstore:
   provider: "chroma"
   persist_dir: "./data/chroma_db"
-  embedding_model: "text-embedding-3-small"
+  embedding_model: "paraphrase-multilingual-MiniLM-L12-v2"
 
 retrieval:
   top_k: 5
-  score_threshold: 0.7
+  score_threshold: 0.3
 
 llm:
-  model: "gpt-4o-mini"
+  model: "mistral"
   temperature: 0.0
   max_tokens: 1000
 
