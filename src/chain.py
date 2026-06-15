@@ -28,7 +28,7 @@ def get_prompt():
         dis clairement que tu ne trouves pas l'information.
         """,
     ),
-    ("human","Contexte : {context}\n\nQuestion : {question}")
+    ("human","Contexte : {context}\n\nQuestion : {input}")
 ]
     prompt=ChatPromptTemplate.from_messages(messages)
     return prompt

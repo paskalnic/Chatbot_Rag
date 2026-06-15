@@ -32,6 +32,9 @@ if question := st.chat_input("Pose moi une question"):
 
     # 5. Afficher la réponse
     st.chat_message("assistant").write(response["answer"])
+    with st.expander("Sources utilisées"):
+        for doc in response["context"]:
+            st.info(f"**{doc.metadata['source']}** — page {doc.metadata['page']}\n\n{doc.page_content[:200]}...")
 
     # 6. Sauvegarder dans l'historique
     st.session_state["messages"].append({"role": "user", "content": question})
