@@ -1,10 +1,10 @@
 from langchain_ollama import ChatOllama
 from loguru import logger
 from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains.combine_documents import (
+from langchain_classic.chains.combine_documents import (
     create_stuff_documents_chain,
 )
-from langchain.chains import create_retrieval_chain
+from langchain_classic.chains import create_retrieval_chain
 
 # cle api http://localhost:11434/api
 def load_llm(llm_config:dict):
