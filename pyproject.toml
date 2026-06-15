@@ -23,6 +23,7 @@ click = "^8.4.1"
 sentence-transformers = "^5.5.1"
 langchain-huggingface = "^1.2.2"
 langchain-chroma = "^1.1.0"
+langchain-ollama = "^1.1.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "*"
