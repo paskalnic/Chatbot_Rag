@@ -5,6 +5,7 @@ description = "RAG chatbot pipeline with LangChain and ChromaDB"
 authors = ["paskal nicolas"]
 license = "MIT"
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = ">=3.12,<4.0"
