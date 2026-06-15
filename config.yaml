@@ -10,7 +10,7 @@ chunking:
 vectorstore:
   provider: "chroma"
   persist_dir: "./data/chroma_db"
-  embedding_model: "text-embedding-3-small"
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
 
 retrieval:
   top_k: 5

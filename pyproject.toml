@@ -20,6 +20,9 @@ pyyaml = "^6.0.3"
 numpy = "^2.4.6"
 pypdf = "^6.13.2"
 click = "^8.4.1"
+sentence-transformers = "^5.5.1"
+langchain-huggingface = "^1.2.2"
+langchain-chroma = "^1.1.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "*"
