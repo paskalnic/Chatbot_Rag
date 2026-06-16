@@ -1,8 +1,10 @@
+import os
+
 import streamlit as st
+
+from chain import build_chain, get_prompt, load_llm
 from ingest import load_config
 from retriever import load_retriever
-from chain import load_llm, get_prompt, build_chain
-import os
 
 CONFIG_PATH = os.getenv("CONFIG_PATH", "config.yaml")
 
@@ -27,16 +29,21 @@ for message in st.session_state["messages"]:
 if question := st.chat_input("Pose moi une question"):
     st.chat_message("user").write(question)
 
-    # 4. Appeler la chain
+    # Appeler la chain
     response = st.session_state["chain"].invoke({"input": question})
 
-    # 5. Afficher la réponse
+    # Afficher la réponse
     st.chat_message("assistant").write(response["answer"])
     with st.expander("Sources utilisées"):
         for doc in response["context"]:
-            st.info(f"**{doc.metadata['source']}** — page {doc.metadata['page']}\n\n{doc.page_content[:200]}...")
+            source = doc.metadata['source']
+            page = doc.metadata['page']
+            content = doc.page_content[:200]
+            st.info(f"**{source}** — page {page}\n\n{content}...")
 
     # 6. Sauvegarder dans l'historique
     st.session_state["messages"].append({"role": "user", "content": question})
-    st.session_state["messages"].append({"role": "assistant", "content":response["answer"]})
+    st.session_state["messages"].append(
+        {"role": "assistant", "content":response["answer"]}
+        )
 

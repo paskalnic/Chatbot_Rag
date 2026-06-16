@@ -5,6 +5,7 @@ description = "RAG chatbot pipeline with LangChain and ChromaDB"
 authors = ["paskal nicolas"]
 license = "MIT"
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = ">=3.12,<4.0"
@@ -28,6 +29,7 @@ langchain-ollama = "^1.1.0"
 [tool.poetry.group.dev.dependencies]
 pytest = "*"
 ruff = "*"
+pytest-cov = "^7.1.0"
 [tool.ruff] 
 line-length = 88
 target-version = "py312"

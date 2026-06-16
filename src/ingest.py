@@ -1,12 +1,16 @@
-# Take the PDF files and convert them to text files then ingest the text files into the database.
+"""
+Take the PDF files and convert them to text
+files then ingest the text files into the database.
+ """
 
-import yaml
-from loguru import logger
-from langchain_community.document_loaders import PyPDFDirectoryLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_chroma import Chroma
 import click
+import yaml
+from langchain_chroma import Chroma
+from langchain_community.document_loaders import PyPDFDirectoryLoader
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from loguru import logger
+
 
 def load_config(config_path:str) -> dict:
     try:
@@ -57,12 +61,12 @@ def build_vectorstore(chunks:list, vectorstore_config:dict):
     if not chunks:
         logger.error("No chunks to embed")
         raise ValueError("No chunks to embed")
-    
+
     hf = HuggingFaceEmbeddings(
         model_name=vectorstore_config["embedding_model"]
     )
-   
-    vectorstore = Chroma.from_documents (
+
+    Chroma.from_documents (
         documents = chunks,
         embedding = hf,
         persist_directory = vectorstore_config["persist_dir"])
@@ -78,7 +82,7 @@ def main(config):
         documents_chunked=chunk_documents(pdfs_loaded,config_loaded["chunking"])
         build_vectorstore(documents_chunked,config_loaded["vectorstore"])
 
-       
+
 
 if __name__ == "__main__":
     main()
