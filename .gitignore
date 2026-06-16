@@ -221,3 +221,4 @@ data/chroma_db/
 data/raw/
 logs/
 
+*.Identifier
