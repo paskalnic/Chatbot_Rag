@@ -1,4 +1,4 @@
-# 🤖 CV Screener : Chatbot RAG Python
+#  CV Screener : Chatbot RAG Python
 
 ![CI](https://github.com/paskalnic/Chatbot_Rag/actions/workflows/python-app.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.12+-blue)
@@ -9,7 +9,7 @@ Pipeline RAG (Retrieval-Augmented Generation) end-to-end permettant d'interroger
 
 ---
 
-## 🚀 Lancer le projet en 3 commandes
+##  Lancer le projet en 3 commandes
 
 ```bash
 git clone https://github.com/paskalnic/Chatbot_Rag.git
@@ -26,7 +26,7 @@ make run      # lance l'interface Streamlit
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 CVs PDF (data/raw/)
@@ -77,7 +77,7 @@ CVs PDF (data/raw/)
 
 ---
 
-## 📁 Structure du projet
+##  Structure du projet
 
 ```
 chatbot-rag/
@@ -101,7 +101,7 @@ chatbot-rag/
 
 ---
 
-## 🔑 Variables d'environnement
+##  Variables d'environnement
 
 Copie le fichier example et remplis tes valeurs :
 
@@ -140,7 +140,7 @@ llm:
 
 ---
 
-## 🔒 Choix techniques
+##  Choix techniques
 
 **Pourquoi HuggingFace pour les embeddings et pas OpenAI ?**
 Les CVs contiennent des données personnelles sensibles. Le modèle `paraphrase-multilingual-MiniLM-L12-v2` tourne entièrement en local : aucune donnée ne quitte la machine.
@@ -167,7 +167,7 @@ Tests unitaires sur les composants critiques du pipeline :
 
 ---
 
-## 📋 Prérequis
+##  Prérequis
 
 - Python 3.12+
 - Poetry
@@ -175,14 +175,17 @@ Tests unitaires sur les composants critiques du pipeline :
 
 ---
 
-## 📄 Licence
+##  Licence
 
 MIT : voir [LICENSE](LICENSE)
 
 ---
 
-## 👤 Auteur
+##  Auteur
 
 **Paskal Nicolas** : Data Engineer IA | Python | LLM & RAG
 
 *"Chatbot RAG end-to-end : Pipeline d'ingestion de CVs avec LangChain, ChromaDB, Ollama/Mistral. Embeddings multilingues HuggingFace, interface Streamlit avec affichage des sources. Tests unitaires + CI/CD GitHub Actions."*
+
+
+<img width="955" height="537" alt="image" src="https://github.com/user-attachments/assets/6e391e38-b735-4d4c-9e5d-961a562c7564" />
