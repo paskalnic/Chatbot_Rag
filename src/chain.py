@@ -1,10 +1,11 @@
-from langchain_ollama import ChatOllama
-from loguru import logger
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_classic.chains import create_retrieval_chain
 from langchain_classic.chains.combine_documents import (
     create_stuff_documents_chain,
 )
-from langchain_classic.chains import create_retrieval_chain
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_ollama import ChatOllama
+from loguru import logger
+
 
 # cle api http://localhost:11434/api
 def load_llm(llm_config:dict):
@@ -20,11 +21,11 @@ def get_prompt():
     messages = [
     (
         "system",
-        """ 
-        Tu es un assistant expert en analyse de CVs. 
-        Réponds UNIQUEMENT à partir du contexte fourni. 
-        Réponds toujours en français. 
-        Si la réponse n'est pas dans le contexte, 
+        """
+        Tu es un assistant expert en analyse de CVs.
+        Réponds UNIQUEMENT à partir du contexte fourni.
+        Réponds toujours en français.
+        Si la réponse n'est pas dans le contexte,
         dis clairement que tu ne trouves pas l'information.
         """,
     ),
